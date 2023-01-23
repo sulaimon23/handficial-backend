@@ -4,12 +4,19 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start": "node server.js",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "start": "vercel dev",
+        "test": "jest -i"
     },
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "express": "^4.18.2"
+        "express": "^4.18.2",
+        "helmet": "^6.0.1",
+        "mongoose": "^6.8.4"
+    },
+    "devDependencies": {
+        "@types/jest": "^26.0.23",
+        "jest": "^27.0.3",
+        "supertest": "^6.1.3"
     }
 }
