@@ -4,6 +4,7 @@ const { ErrorResponseObject } = require("./common/http");
 const routes = require("./routes");
 const connectDB = require("./config/db");
 const cors = require("cors");
+require("dotenv").config();
 
 //
 //

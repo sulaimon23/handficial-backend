@@ -2,10 +2,16 @@ const mongoose = require("mongoose");
 
 const UserSchema = mongoose.Schema(
     {
-        name: { type: String, required: "{PATH} is required" },
+        fullName: { type: String, required: "{PATH} is required" },
         email: { type: String, required: "{PATH} is required", unique: true },
         password: { type: String, required: "{PATH} is required" },
+        isArtisan: { type: Boolean, required: true },
         gender: { type: String, required: false, enum: ["male", "female"] },
+        profession: {
+            type: String,
+            required: this.isArtisan,
+            enum: ["male", "female"],
+        },
         status: {
             type: String,
             required: true,
