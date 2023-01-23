@@ -1,9 +1,9 @@
 import crypto from "crypto";
 import mongoose from "mongoose";
 import { log } from "debug";
-import UserDevice from "../components/user/userDeviceModel";
-import firebase from "../service/firebase";
-import Notification from "../components/user/notificationModel";
+import UserDevice from "../controllers/UserDeviceSchema";
+import firebase from "../subscribe/firebase";
+import Notification from "../controllers/NotificationSchema";
 import asyncHandler from "../middleware/async";
 
 /**
