@@ -16,7 +16,7 @@ const UserSchema = mongoose.Schema(
         fullName: { type: String, required: "{PATH} is required" },
         email: { type: String, required: "{PATH} is required", unique: true },
         password: { type: String, required: "{PATH} is required" },
-        isArtisan: { type: Boolean, required: true },
+        isArtisan: { type: Boolean, required: false },
         gender: { type: String, required: false, enum: ["male", "female"] },
         profession: {
             type: String,
