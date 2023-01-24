@@ -25,7 +25,6 @@ export const signUp = asyncHandler(async (req, res) => {
     if (chk) return ResMsg(res, 400, "error", "user already exist", null);
     try {
         const encryptPwd = await EncryptPassword(password);
-        console.log(encryptPwd);
         const user = await User.create({
             name,
             email: email.toLowerCase(),
