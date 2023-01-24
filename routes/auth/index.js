@@ -18,7 +18,8 @@ import User from "../../controllers/UserSchema";
 //
 //
 export const signUp = asyncHandler(async (req, res) => {
-    const { name, email, password, deviceToken } = req.body;
+    const { name, email, password, deviceToken, profession, isArtisan } =
+        req.body;
 
     const chk = await User.findOne({ email: email.toLowerCase() });
     if (chk) return ResMsg(res, 400, "error", "user already exist", null);
@@ -29,6 +30,8 @@ export const signUp = asyncHandler(async (req, res) => {
             name,
             email: email.toLowerCase(),
             password: encryptPwd,
+            isArtisan,
+            profession,
         });
         const token = await user.getSignedJwtToken();
 
@@ -41,7 +44,7 @@ export const signUp = asyncHandler(async (req, res) => {
 
             sendEmail({
                 email,
-                subject: "Welcome to 707!",
+                subject: "Welcome to Handficial!",
                 message: signupMessage(), // userObject
             });
 
@@ -91,7 +94,7 @@ export const login = asyncHandler(async (req, res) => {
 
     return ResMsg(res, 200, "success", "User login success.", {
         user,
-        // locations,
+        locations,
         token,
     });
 });

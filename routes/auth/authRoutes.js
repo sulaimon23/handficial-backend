@@ -1,7 +1,6 @@
 import express from "express";
 
-// import { forgotPassword, login, logOut, resetPassword, signUp } from ".";
-import { login, signUp } from ".";
+import { forgotPassword, login, logOut, resetPassword, signUp } from ".";
 // import { resetPwdValidation, validate } from "../../helpers/validation";
 // import { verifyAdmin } from "../../middleware/auth";
 
@@ -14,9 +13,9 @@ import { login, signUp } from ".";
 const Router = express.Router();
 
 Router.post("/signup", signUp);
-Router.get("/login", login);
-// Router.post("/logout", logOut);
-// Router.post("/forgotPwd", forgotPassword);
+Router.post("/login", login);
+Router.post("/logout", logOut);
+Router.post("/forgotPwd", forgotPassword);
 // Router.post("/resetPwd", resetPwdValidation(), validate, resetPassword);
 
 // Router.post("/admin/init", adminInit);
