@@ -20,7 +20,6 @@ const UserSchema = mongoose.Schema(
         gender: { type: String, required: false, enum: ["male", "female"] },
         profession: {
             type: String,
-            required: this.isArtisan,
             enum: ["male", "female"],
         },
         status: {
